@@ -1,66 +1,69 @@
 $(function() {
     var $height,
         $width,
-        trow = '',
+        tRow = '',
         $color;
 
-    // Select color input
+    // TODO: Select color input
     $('#pixelCanvas').on('click', 'td', function () {
         $color = $('#colorPicker').val();
 
+        // TODO: Check if cell has style
         $(this).attr('style') ?  $(this).removeAttr('style') : $(this).attr('style', 'background:' + $color);
 
-        //$(this).css('background', $color);
-
-        //console.log($('#colorPicker').val());
     })
 
 
-    // Select size input
-
+    // TODO: Select size input
     $('#sizePicker').submit(function(event) {
 
         $height = $('#inputHeight').val();
         $width = $('#inputWeight').val();
 
-        //console.log(`Height ${$height} Width ${$width}`);
-
+        // TODO: Call function makeGrid to create desired number of row and column
         makeGrid($height, $width);
     });
 
 
 
-    // When size is submitted by the user, call makeGrid()
+    // TODO: When size is submitted by the user, call makeGrid()
 
+    /**
+    *  @description Creates art canvas based on the dimension submitted by the user
+    *  @param { string } height - The canvas height
+    *  @param { string } width - The canvas width
+    */
     function makeGrid(height, width) {
-    // Your code goes here!
+
+        // TODO: Clear existing canvas grid before making a new one
         clearGrid();
 
-        var $table, tdata = '';
+        var $table,
+            tData = '';
 
        $table = $('#pixelCanvas');
 
         for(var i = 0; i < height; i++) {
 
-            trow = '<tr>';
+            tRow = '<tr>';
 
             for(var j = 0; j < width; j++) {
-                tdata += '<td></td>';
+                tData += '<td></td>';
             }
 
-            trow = trow + tdata + '</tr>';
+            tRow = tRow + tData + '</tr>';
 
-            $table.append(trow);
+            $table.append(tRow);
 
-            //console.log(`${trow}`);
-
-            tdata = '';
+            tData = '';
         }
 
     }
 
+    /**
+     * @description Deletes table rows from table
+     */
     function clearGrid() {
-        //var $table = $('#pixelCanvas');
         $('tr').remove();
     }
 
