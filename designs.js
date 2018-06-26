@@ -8,7 +8,7 @@ $(function() {
     $('#pixelCanvas').on('click', 'td', function () {
         $color = $('#colorPicker').val();
 
-        // TODO: Check if cell has style
+        // TODO: Check if cell has style, if yes remove and if no add
         $(this).attr('style') ?  $(this).removeAttr('style') : $(this).attr('style', 'background:' + $color);
 
     })
