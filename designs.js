@@ -10,9 +10,7 @@ $(function() {
 
         // TODO: Check if cell has style, if yes remove and if no add
         $(this).attr('style') ?  $(this).removeAttr('style') : $(this).attr('style', 'background:' + $color);
-
     })
-
 
     // TODO: Select size input
     $('#sizePicker').submit(function(event) {
@@ -51,7 +49,6 @@ $(function() {
 
             tData = '';
         } // Create number of rows based on height submitted by user
-
     }
 });
 
