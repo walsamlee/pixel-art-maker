@@ -51,4 +51,3 @@ $(function() {
         } // Create number of rows based on height submitted by user
     }
 });
-
