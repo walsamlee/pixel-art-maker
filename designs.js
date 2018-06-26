@@ -31,7 +31,7 @@ $(function() {
     */
     function makeGrid(height, width) {
         // TODO: Clear existing canvas grid before making a new one
-        clearGrid();
+        $('tr').remove();
 
         var $table,
             tData = '';
@@ -53,13 +53,5 @@ $(function() {
         } // Create number of rows based on height submitted by user
 
     }
-
-    /**
-     * @description Deletes table rows from table
-     */
-    function clearGrid() {
-        $('tr').remove();
-    }
-
 });
 
