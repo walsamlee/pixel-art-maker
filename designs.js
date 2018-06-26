@@ -20,13 +20,9 @@ $(function() {
         $height = $('#inputHeight').val();
         $width = $('#inputWeight').val();
 
-        // TODO: Call function makeGrid to create desired number of row and column
+        // TODO: When size is submitted by the user, call makeGrid()
         makeGrid($height, $width);
     });
-
-
-
-    // TODO: When size is submitted by the user, call makeGrid()
 
     /**
     *  @description Creates art canvas based on the dimension submitted by the user
@@ -34,29 +30,27 @@ $(function() {
     *  @param { string } width - The canvas width
     */
     function makeGrid(height, width) {
-
         // TODO: Clear existing canvas grid before making a new one
         clearGrid();
 
         var $table,
             tData = '';
 
-       $table = $('#pixelCanvas');
+        $table = $('#pixelCanvas');
 
         for(var i = 0; i < height; i++) {
-
             tRow = '<tr>';
 
             for(var j = 0; j < width; j++) {
                 tData += '<td></td>';
-            }
+            } // Create number of columns based on width submitted by user
 
             tRow = tRow + tData + '</tr>';
 
             $table.append(tRow);
 
             tData = '';
-        }
+        } // Create number of rows based on height submitted by user
 
     }
 
